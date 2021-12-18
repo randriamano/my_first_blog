@@ -9,38 +9,26 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <header class="page-header">
-          <div class="container">
-            {% if user.is_authenticated %}
-                <a href="{% url 'post_new' %}" class="top-menu">
-                    {% include './icons/file-earmark-plus.svg' %}
-                </a>
-            {% endif %}
-            <h1><a href="https://djangogirls.org/en/antananarivo/" target="_blank">Django Girls </a></h1>
-            <h2>Atelier de programmation en ligne gratuit pour les femmes</h2>
-            
-          </div>
-        </header>
-        <main class="content container">
-            <div class="row">
-                <div class="col">
-                {% block content %}
-                {% endblock %}
-                </div>
+            <header class="page-header">
+            <div class="container">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'post_new' %}" class="top-menu">
+                        {% include './icons/file-earmark-plus.svg' %}
+                    </a>
+                {% endif %}
+                <h1><a href="https://djangogirls.org/en/antananarivo/" target="_blank">Django Girls </a></h1>
+                <h2>Atelier de programmation en ligne gratuit pour les femmes</h2>
             </div>
-        </main>
-        <aside class= "navigation">
-            <h1> BLog</h1>
-            <nav>
-                <ul>
-                    <li>Acceuil</li>
-                    <li>Expérience</li>
-                    <li>A propos de Django</li>
-                </ul>
-            </nav>
-        </aside>
-        <aside class="apropos">
-            <h2>A propos de moi</h2>
-        </aside>
+            </header>
+                <article>
+                    <main class="content container" id="experience">
+                        <div class="row">
+                        <div class="col">
+                            {% block content %}
+                            {% endblock %}
+                        </div>
+                        </div>
+                    </main>
+                </article>
     </body>
 </html>
